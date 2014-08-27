@@ -1,0 +1,15 @@
+<h3>Users list</h3>
+<table class="table table-striped">
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Username</th>
+    <th>E-mail</th>
+  </tr>
+  <tr ng-repeat="user in data.users">
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
