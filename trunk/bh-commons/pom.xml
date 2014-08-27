@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ro.bighealth</groupId>
+		<artifactId>bighealth-master</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>bh-commons</artifactId>
+	<packaging>jar</packaging>
+
+	<name>BigHealth - Commons</name>
+	<description>Commons project for BigHealth</description>
+
+	<inceptionYear>2014</inceptionYear>
+
+	<dependencies>
+		<!-- Spring Dependencies START -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<!-- Spring Dependencies END -->
+
+		<!-- Apache Commons Dependencies START -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<!-- Apache Commons Dependencies END -->
+
+		<!-- Hibernate Dependencies START -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<!-- Hibernate Dependencies END -->
+	</dependencies>
+</project>
