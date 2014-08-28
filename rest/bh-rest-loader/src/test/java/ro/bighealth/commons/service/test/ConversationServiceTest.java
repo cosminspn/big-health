@@ -38,7 +38,7 @@ public class ConversationServiceTest extends BaseTest {
 	private UserService userService;
 
 	/**
-	 * Test for create and find an {@link Conversation}.
+	 * Test for create and find a {@link Conversation}.
 	 */
 	@Test
 	public void createAndFindConversation() {
@@ -64,7 +64,7 @@ public class ConversationServiceTest extends BaseTest {
 	}
 
 	/**
-	 * Test for update and remove an {@link Conversation}.
+	 * Test for update and remove a {@link Conversation}.
 	 */
 	@Test
 	public void updateAndRemoveConversation() {
