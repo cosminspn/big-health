@@ -20,22 +20,22 @@
 
 	<properties>
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
-		<java.version>1.7</java.version>
-		<spring.version>3.2.7.RELEASE</spring.version>
-		<spring.data.jpa.version>1.4.3.RELEASE</spring.data.jpa.version>
+		<java.version>1.8</java.version>
+		<spring.version>4.0.6.RELEASE</spring.version>
+		<spring.data.jpa.version>1.6.4.RELEASE</spring.data.jpa.version>
 		<apache.commons.dbcp.version>1.4</apache.commons.dbcp.version>
 		<apache.commons.collections.version>3.2.1</apache.commons.collections.version>
-		<hibernate.version>4.3.4.Final</hibernate.version>
-		<hibernate.validator.version>5.1.0.Final</hibernate.validator.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
+		<hibernate.validator.version>5.1.2.Final</hibernate.validator.version>
 		<oracle.version>11.2.0</oracle.version>
-		<resteasy.version>3.0.6.Final</resteasy.version>
-		<fasterxml.version>2.3.2</fasterxml.version>
-		<javax.servlet.version>2.5</javax.servlet.version>
+		<resteasy.version>3.0.8.Final</resteasy.version>
+		<fasterxml.version>2.4.2</fasterxml.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<jmockit.version>1.6</jmockit.version>
 		<easymock.version>3.2</easymock.version>
-		<unitils.version>3.4</unitils.version>
-		<slf4j.version>1.7.6</slf4j.version>
-		<cors.filter.version>1.9.2</cors.filter.version>
+		<unitils.version>3.4.2</unitils.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<cors.filter.version>2.1.2</cors.filter.version>
 	</properties>
 
 	<build>
@@ -118,7 +118,7 @@
 			<!-- Javax Servlet Dependencies START -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
+				<artifactId>javax.servlet-api</artifactId>
 				<version>${javax.servlet.version}</version>
 			</dependency>
 			<!-- Javax Servlet Dependencies END -->
