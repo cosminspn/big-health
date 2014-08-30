@@ -39,18 +39,20 @@
 	</properties>
 
 	<build>
-		<plugins>
-			<!-- Maven compiler plugin START -->
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.plugin.version}</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-			<!-- Maven compiler plugin END -->
-		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!-- Maven compiler plugin START -->
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<!-- Maven compiler plugin END -->
+			</plugins>
+		</pluginManagement>
 	</build>
 
 	<dependencyManagement>

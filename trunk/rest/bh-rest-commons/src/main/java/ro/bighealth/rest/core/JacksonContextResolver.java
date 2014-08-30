@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 
 /**
- * .
+ * Jackson Context Resolver.
  * 
  * @author CosminS
  * @since Mar 24, 2014
@@ -37,12 +37,12 @@ public class JacksonContextResolver implements ContextResolver<ObjectMapper> {
 	 */
 	public JacksonContextResolver() {
 		objectMapper = new ObjectMapper();
-		
+
 		objectMapper.addMixInAnnotations(List.class, ListMixIn.class);
 		objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
-		//objectMapper.enable(SerializationFeature.WRITE_EMPTY_JSON_ARRAYS);
+		// objectMapper.enable(SerializationFeature.WRITE_EMPTY_JSON_ARRAYS);
 		objectMapper.setAnnotationIntrospector(new JaxbAnnotationIntrospector(
-                TypeFactory.defaultInstance(), false));
+				TypeFactory.defaultInstance(), false));
 	}
 
 	@Override

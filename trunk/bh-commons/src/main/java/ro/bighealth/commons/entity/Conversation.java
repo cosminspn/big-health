@@ -7,6 +7,8 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -54,6 +56,7 @@ public class Conversation extends BaseEntity {
 	 * Priority of the message.
 	 */
 	@Column(name = "priority", length = 10)
+	@Enumerated(EnumType.STRING)
 	private Priority priority;
 
 	/**
