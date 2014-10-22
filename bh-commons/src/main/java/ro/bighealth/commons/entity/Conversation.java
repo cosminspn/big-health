@@ -68,8 +68,8 @@ public class Conversation extends BaseEntity {
 	/**
 	 * When the message was sent.
 	 */
-	@Column(name = "when", nullable = false)
-	private Timestamp when;
+	@Column(name = "sent_on", nullable = false)
+	private Timestamp sentOn;
 
 	public User getFromUser() {
 		return fromUser;
@@ -103,12 +103,12 @@ public class Conversation extends BaseEntity {
 		this.message = message;
 	}
 
-	public Timestamp getWhen() {
-		return when;
+	public Timestamp getSentOn() {
+		return sentOn;
 	}
 
-	public void setWhen(Timestamp when) {
-		this.when = when;
+	public void setSentOn(Timestamp sentOn) {
+		this.sentOn = sentOn;
 	}
 
 	@Override
@@ -119,7 +119,7 @@ public class Conversation extends BaseEntity {
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
 		result = prime * result + ((priority == null) ? 0 : priority.hashCode());
 		result = prime * result + ((toUser == null) ? 0 : (int) (toUser.getId() ^ (toUser.getId() >>> 32)));
-		result = prime * result + ((when == null) ? 0 : when.hashCode());
+		result = prime * result + ((sentOn == null) ? 0 : sentOn.hashCode());
 		return result;
 	}
 
@@ -159,11 +159,11 @@ public class Conversation extends BaseEntity {
 		} else if (!toUser.equals(other.toUser)) {
 			return false;
 		}
-		if (when == null) {
-			if (other.when != null) {
+		if (sentOn == null) {
+			if (other.sentOn != null) {
 				return false;
 			}
-		} else if (!when.equals(other.when)) {
+		} else if (!sentOn.equals(other.sentOn)) {
 			return false;
 		}
 		return true;
@@ -180,8 +180,8 @@ public class Conversation extends BaseEntity {
 		builder.append(priority);
 		builder.append(", message=");
 		builder.append(message);
-		builder.append(", when=");
-		builder.append(when);
+		builder.append(", sentOn=");
+		builder.append(sentOn);
 		builder.append("]");
 		return builder.toString();
 	}
