@@ -14,8 +14,13 @@
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
 		</listener-class>
 	</listener>
-	<listener>
+	<!-- <listener>
 		<listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener
+		</listener-class>
+	</listener> -->
+	
+	<listener>
+		<listener-class>ro.bighealth.context.SpringContextLoaderListener
 		</listener-class>
 	</listener>
 
