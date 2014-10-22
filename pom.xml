@@ -29,7 +29,7 @@
 		<hibernate.validator.version>5.1.2.Final</hibernate.validator.version>
 		<oracle.version>11.2.0</oracle.version>
 		<mysql.connector.version>5.1.33</mysql.connector.version>
-		<resteasy.version>3.0.8.Final</resteasy.version>
+		<resteasy.version>3.0.9.Final</resteasy.version>
 		<fasterxml.version>2.4.2</fasterxml.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 		<jmockit.version>1.6</jmockit.version>
