@@ -122,7 +122,7 @@ public final class EntityBuilder {
 
 		conversation.setMessage("message");
 		conversation.setPriority(Priority.LOW);
-		conversation.setWhen(new Timestamp(System.currentTimeMillis()));
+		conversation.setSentOn(new Timestamp(System.currentTimeMillis()));
 
 		return conversation;
 	}

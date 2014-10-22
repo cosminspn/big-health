@@ -53,6 +53,13 @@
 		</dependency>
 		<!-- Oracle OJDBC (Manually Installed) Dependencies END -->
 
+		<!-- MySQL Connector Dependencies START -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- MySQL Connector Dependencies START -->
+
 		<!-- Javax Servlet Dependencies START -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
