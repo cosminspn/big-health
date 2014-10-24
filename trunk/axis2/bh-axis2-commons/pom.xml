@@ -1,20 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>ro.bighealth</groupId>
-		<artifactId>rest</artifactId>
+		<artifactId>axis2</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>bh-rest-commons</artifactId>
+	<artifactId>bh-axis2-commons</artifactId>
 	<packaging>jar</packaging>
 
-	<name>BigHealth - REST - Commons</name>
-	<description>Commons project for BigHealth - REST</description>
+	<name>BigHealth - Axis2 - Commons</name>
+	<description>Commons project for BigHealth - Axis2</description>
 
 	<inceptionYear>2014</inceptionYear>
 
@@ -26,15 +26,15 @@
 			<version>${project.parent.version}</version>
 		</dependency>
 		<!-- Application modules END -->
-		<!-- RESTeasy Dependencies START -->
+		<!-- Apache Axis2 Dependencies START -->
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-spring</artifactId>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<groupId>org.apache.ws.commons.axiom</groupId>
+			<artifactId>axiom-api</artifactId>
 		</dependency>
-		<!-- RESTeasy Dependencies END -->
+		<!-- Apache Axis2 Dependencies END -->
 	</dependencies>
 </project>

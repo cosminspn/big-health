@@ -2,27 +2,27 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<parent>
 		<groupId>ro.bighealth</groupId>
-		<artifactId>rest</artifactId>
+		<artifactId>axis2</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-
-	<artifactId>bh-rest-loader</artifactId>
+	
+	<artifactId>bh-axis2-loader</artifactId>
 	<packaging>war</packaging>
-
-	<name>BigHealth - REST - Loader</name>
-	<description>Project for loading BigHealth - REST services.</description>
-
+	
+	<name>BigHealth - Axis2 - Loader</name>
+	<description>Project for loading BigHealth - Axis2 services</description>
+	
 	<inceptionYear>2014</inceptionYear>
-
+	
 	<dependencies>
 		<!-- Application modules START -->
 		<dependency>
 			<groupId>ro.bighealth</groupId>
-			<artifactId>bh-rest-commons</artifactId>
+			<artifactId>bh-axis2-commons</artifactId>
 			<version>${project.parent.version}</version>
 			<exclusions>
 				<exclusion>

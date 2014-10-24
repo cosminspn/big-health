@@ -16,6 +16,7 @@
 		<module>bh-commons</module>
 		<module>rest</module>
 		<module>web</module>
+		<module>axis2</module>
 	</modules>
 
 	<properties>
@@ -37,6 +38,8 @@
 		<unitils.version>3.4.2</unitils.version>
 		<slf4j.version>1.7.7</slf4j.version>
 		<cors.filter.version>2.1.2</cors.filter.version>
+		<axis2.version>1.6.2</axis2.version>
+		<axiom.version>1.2.14</axiom.version>
 	</properties>
 
 	<build>
@@ -167,6 +170,19 @@
 				<version>${cors.filter.version}</version>
 			</dependency>
 			<!-- CORS Filter Dependencies END -->
+
+			<!-- Apache Axis2 Dependencies START -->
+			<dependency>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2</artifactId>
+				<version>${axis2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.ws.commons.axiom</groupId>
+				<artifactId>axiom-api</artifactId>
+				<version>${axiom.version}</version>
+			</dependency>
+			<!-- Apache Axis2 Dependencies END -->
 		</dependencies>
 	</dependencyManagement>
 </project>
