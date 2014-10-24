@@ -10,16 +10,16 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
-	<artifactId>rest</artifactId>
+	<artifactId>axis2</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>BigHealth - REST - Master</name>
-	<description>Master project for REST</description>
+	<name>BigHealth - Axis2 - Master</name>
+	<description>Master project for Axis2</description>
 	
 	<inceptionYear>2014</inceptionYear>
 	
 	<modules>
-		<module>bh-rest-commons</module>
-		<module>bh-rest-loader</module>
+		<module>bh-axis2-commons</module>
+		<module>bh-axis2-loader</module>
 	</modules>
 </project>
