@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/ http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<persistence-unit name="bighealth" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>ro.bighealth.commons.core.BaseEntity</class>
+		<class>ro.bighealth.commons.entity.User</class>
+		<class>ro.bighealth.commons.entity.Patient</class>
+		<class>ro.bighealth.commons.entity.MedicalCenter</class>
+		<class>ro.bighealth.commons.entity.MedicalSection</class>
+		<class>ro.bighealth.commons.entity.Doctor</class>
+		<class>ro.bighealth.commons.entity.Disease</class>
+		<class>ro.bighealth.commons.entity.DoctorPatient</class>
+		<class>ro.bighealth.commons.entity.Hospitalization</class>
+		<class>ro.bighealth.commons.entity.Medication</class>
+		<class>ro.bighealth.commons.entity.SurgeryConsult</class>
+		<class>ro.bighealth.commons.entity.PatientDoctorEvaluationForm</class>
+		<class>ro.bighealth.commons.entity.PatientSelfEvaluationForm</class>
+		<class>ro.bighealth.commons.entity.DiseasePatient</class>
+		<class>ro.bighealth.commons.entity.PulseMeter</class>
+		<class>ro.bighealth.commons.entity.BloodTest</class>
+		<class>ro.bighealth.commons.entity.Conversation</class>
+		<class>ro.bighealth.commons.entity.UploadedData</class>
+		<class>ro.bighealth.commons.entity.EmergencyContact</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+</persistence>
