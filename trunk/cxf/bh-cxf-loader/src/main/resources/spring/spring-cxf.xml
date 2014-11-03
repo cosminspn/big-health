@@ -10,9 +10,9 @@
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-	
+
 	<import resource="classpath:/spring/spring-root.xml" />
-	<jaxws:endpoint id="userAxisService"
-		implementor="ro.bighealth.commons.services.impl.UserServiceAxisImpl"
-		address="/userAxisService" />
+	<jaxws:endpoint id="userCxfService"
+		implementor="ro.bighealth.cxf.service.impl.UserCxfServiceImpl"
+		address="/userCxfService" />
 </beans>
