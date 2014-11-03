@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ro.bighealth</groupId>
+		<artifactId>axis2</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>bh-axis2-loader</artifactId>
+	<packaging>war</packaging>
+
+	<name>BigHealth - Axis2 - Loader</name>
+	<description>Project for loading BigHealth - Axis2 services</description>
+
+	<inceptionYear>2014</inceptionYear>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-java2wsdl-maven-plugin</artifactId>
+				<configuration>
+					<className>ro.bighealth.commons.service.UserService</className>
+					<outputFileName>userService.wsdl</outputFileName>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java2wsdl</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/src/main/java</sourceRoot>
+							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
+							<includes>
+								<include>*.wsdl</include>
+							</includes>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>ro.bighealth</groupId>
+			<artifactId>bh-commons</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<!-- Spring Dependencies START -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<!-- Spring Dependencies END -->
+
+		<!-- Apache Commons Dependencies START -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+		<!-- Apache Commons Dependencies END -->
+
+		<!-- Oracle OJDBC (Manually Installed) Dependencies START -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+		</dependency>
+		<!-- Oracle OJDBC (Manually Installed) Dependencies END -->
+
+		<!-- MySQL Connector Dependencies START -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- MySQL Connector Dependencies START -->
+
+		<!-- Javax Servlet Dependencies START -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<!-- Javax Servlet Dependencies END -->
+
+		<!-- Unit Testing Dependencies START -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.unitils</groupId>
+			<artifactId>unitils-spring</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-nop</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>hibernate</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Unit Testing Dependencies END -->
+
+		<!-- Logging Dependencies START -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<!-- Logging Dependencies END -->
+
+		<!-- CORS Filter Dependencies START -->
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+		</dependency>
+		<!-- CORS Filter Dependencies END -->
+
+		<!-- Apache CXF Dependencies START -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<!-- Apache CXF Dependencies END -->
+	</dependencies>
+</project>
