@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="UserService"
+	targetNamespace="http://service.cxf.bighealth.ro/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.cxf.bighealth.ro/"
+	xmlns:ns1="http://service.cxf.bighealth.ro/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://service.cxf.bighealth.ro/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+			elementFormDefault="unqualified" targetNamespace="http://service.cxf.bighealth.ro/">
+			<xs:element name="user" type="tns:user" />
+			<xs:complexType name="user">
+				<xs:complexContent>
+					<xs:extension base="tns:baseEntity">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="email" type="xs:string" />
+							<xs:element minOccurs="0" name="firstName" type="xs:string" />
+							<xs:element minOccurs="0" name="lastName" type="xs:string" />
+							<xs:element minOccurs="0" name="password" type="xs:string" />
+							<xs:element minOccurs="0" name="username" type="xs:string" />
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType abstract="true" name="baseEntity">
+				<xs:sequence>
+					<xs:element name="id" type="xs:long" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="findById" type="tns:findById" />
+			<xs:complexType name="findById">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="entityId" type="xs:long" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="findByIdResponse" type="tns:findByIdResponse" />
+			<xs:complexType name="findByIdResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="create" type="tns:create" />
+			<xs:complexType name="create">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="entity" type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="createResponse" type="tns:createResponse" />
+			<xs:complexType name="createResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="update" type="tns:update" />
+			<xs:complexType name="update">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="entity" type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="updateResponse" type="tns:updateResponse" />
+			<xs:complexType name="updateResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="findByEmail" type="tns:findByEmail" />
+			<xs:complexType name="findByEmail">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="email" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="findByEmailResponse" type="tns:findByEmailResponse" />
+			<xs:complexType name="findByEmailResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="return"
+						type="tns:user" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="findAll" type="tns:findAll" />
+			<xs:complexType name="findAll">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:element name="findAllResponse" type="tns:findAllResponse" />
+			<xs:complexType name="findAllResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="remove" type="tns:remove" />
+			<xs:complexType name="remove">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="entityId" type="xs:long" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="removeResponse" type="tns:removeResponse" />
+			<xs:complexType name="removeResponse">
+				<xs:sequence />
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="findById">
+		<wsdl:part name="parameters" element="ns1:findById">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findByIdResponse">
+		<wsdl:part name="parameters" element="ns1:findByIdResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="removeResponse">
+		<wsdl:part name="parameters" element="ns1:removeResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="create">
+		<wsdl:part name="parameters" element="ns1:create">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="createResponse">
+		<wsdl:part name="parameters" element="ns1:createResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="update">
+		<wsdl:part name="parameters" element="ns1:update">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findAllResponse">
+		<wsdl:part name="parameters" element="ns1:findAllResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findByEmail">
+		<wsdl:part name="parameters" element="ns1:findByEmail">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findAll">
+		<wsdl:part name="parameters" element="ns1:findAll">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateResponse">
+		<wsdl:part name="parameters" element="ns1:updateResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="remove">
+		<wsdl:part name="parameters" element="ns1:remove">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findByEmailResponse">
+		<wsdl:part name="parameters" element="ns1:findByEmailResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="UserServicePortType">
+		<wsdl:operation name="findById">
+			<wsdl:input name="findById" message="ns1:findById">
+			</wsdl:input>
+			<wsdl:output name="findByIdResponse" message="ns1:findByIdResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="create">
+			<wsdl:input name="create" message="ns1:create">
+			</wsdl:input>
+			<wsdl:output name="createResponse" message="ns1:createResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="update">
+			<wsdl:input name="update" message="ns1:update">
+			</wsdl:input>
+			<wsdl:output name="updateResponse" message="ns1:updateResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findByEmail">
+			<wsdl:input name="findByEmail" message="ns1:findByEmail">
+			</wsdl:input>
+			<wsdl:output name="findByEmailResponse" message="ns1:findByEmailResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAll">
+			<wsdl:input name="findAll" message="ns1:findAll">
+			</wsdl:input>
+			<wsdl:output name="findAllResponse" message="ns1:findAllResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="remove">
+			<wsdl:input name="remove" message="ns1:remove">
+			</wsdl:input>
+			<wsdl:output name="removeResponse" message="ns1:removeResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="UserServiceSoapBinding" type="ns1:UserServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="findById">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="findById">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="findByIdResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="create">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="create">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="createResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="update">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="update">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="updateResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findByEmail">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="findByEmail">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="findByEmailResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAll">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="findAll">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="findAllResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="remove">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="remove">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="removeResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="UserService">
+		<wsdl:port name="UserServicePort" binding="ns1:UserServiceSoapBinding">
+			<soap:address location="http://localhost:9090/UserServicePort" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
