@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ro.bighealth.commons.service.UserService;
-import ro.bighealth.cxf.service.ObjectFactory;
-import ro.bighealth.cxf.service.User;
-import ro.bighealth.cxf.service.UserServicePortType;
+import ro.bighealth.soap.service.ObjectFactory;
+import ro.bighealth.soap.service.User;
+import ro.bighealth.soap.service.UserServicePortType;
 
 /**
  * @author CosminS
@@ -22,7 +22,7 @@ import ro.bighealth.cxf.service.UserServicePortType;
  * @since 3 nov. 2014
  */
 @Service("userCxfService")
-@WebService(targetNamespace = "http://service.cxf.bighealth.ro/", name = "UserServicePortType")
+@WebService(targetNamespace = "http://service.commons.bighealth.ro/", name = "UserServicePortType")
 public class UserCxfServiceImpl implements UserServicePortType {
 
 	@Autowired
@@ -167,5 +167,4 @@ public class UserCxfServiceImpl implements UserServicePortType {
 		
 		return newUser;
 	}
-
 }
