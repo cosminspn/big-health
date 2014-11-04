@@ -20,6 +20,7 @@
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-java2ws-plugin</artifactId>
@@ -29,11 +30,22 @@
 						<id>generate-sources</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<targetNamespace>http://service.cxf.bighealth.ro/</targetNamespace>
 							<className>ro.bighealth.commons.service.UserService</className>
 							<genWsdl>true</genWsdl>
 							<verbose>true</verbose>
 							<outputFile>${basedir}/src/main/resources/wsdl/userCXFService.wsdl</outputFile>
+							
+							
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/userCXFService.wsdl</wsdl>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>http://service.commons.bighealth.ro/=ro.bighealth.soap.service</extraarg>
+									</extraargs>
+								</wsdlOption>
+							</wsdlOptions>
+							
 						</configuration>
 						<goals>
 							<goal>java2ws</goal>
@@ -48,8 +60,8 @@
 				<version>${cxf.version}</version>
 				<executions>
 					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
+						<id>install</id>
+						<phase>install</phase>
 						<configuration>
 							<sourceRoot>${basedir}/src/main/java</sourceRoot>
 							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
@@ -62,16 +74,11 @@
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/wsdl/userCXFService.wsdl</wsdl>
 									<extraargs>
-										<extraarg>-client</extraarg>
-										<extraarg>-verbose</extraarg>
 										<extraarg>-p</extraarg>
-										<extraarg>http://your.namespace/services/=your.package</extraarg>
-										<extraarg>-p</extraarg>
-										<extraarg>http://your.namespace2/services2/=your.package2</extraarg>
+										<extraarg>http://service.commons.bighealth.ro/=ro.bighealth.soap.service</extraarg>
 									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
-
 						</configuration>
 						<goals>
 							<goal>wsdl2java</goal>
