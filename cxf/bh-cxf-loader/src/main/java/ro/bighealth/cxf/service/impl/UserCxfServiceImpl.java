@@ -35,8 +35,18 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 */
 	@Override
 	public User create(User entity) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ro.bighealth.commons.entity.User newUser = new ro.bighealth.commons.entity.User();
+
+		newUser.setEmail(entity.getEmail());
+		newUser.setFirstName(entity.getFirstName());
+		newUser.setLastName(entity.getLastName());
+		newUser.setPassword(entity.getPassword());
+		newUser.setUsername(entity.getUsername());
+
+		userService.create(newUser);
+
+		return entity;
 	}
 
 	/*
@@ -46,8 +56,19 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 */
 	@Override
 	public User update(User entity) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ro.bighealth.commons.entity.User newUser = new ro.bighealth.commons.entity.User();
+
+		newUser.setId(entity.getId());
+		newUser.setEmail(entity.getEmail());
+		newUser.setFirstName(entity.getFirstName());
+		newUser.setLastName(entity.getLastName());
+		newUser.setPassword(entity.getPassword());
+		newUser.setUsername(entity.getUsername());
+		
+		userService.update(newUser);
+
+		return entity;
 	}
 
 	/*
@@ -57,7 +78,7 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 */
 	@Override
 	public void remove(Long entityId) {
-		// TODO Auto-generated method stub
+		userService.remove(entityId);
 
 	}
 
@@ -68,17 +89,22 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 */
 	@Override
 	public List<User> findByEmail(String email) {
-		List<ro.bighealth.commons.entity.User> usersFiltered = userService.findByEmail(email);
+		List<ro.bighealth.commons.entity.User> plainUsersFiltered = userService.findByEmail(email);
 
 		List<User> usersList = new ArrayList<User>();
 
-		for (ro.bighealth.commons.entity.User plainUser : usersFiltered) {
+		for (ro.bighealth.commons.entity.User plainUser : plainUsersFiltered) {
 
 			ObjectFactory objectFactory = new ObjectFactory();
 
 			User newUser = objectFactory.createUser();
+
 			newUser.setId(plainUser.getId());
 			newUser.setUsername(plainUser.getUsername());
+			newUser.setEmail(plainUser.getEmail());
+			newUser.setPassword(plainUser.getPassword());
+			newUser.setFirstName(plainUser.getFirstName());
+			newUser.setLastName(plainUser.getLastName());
 
 			usersList.add(newUser);
 
@@ -93,9 +119,29 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 * @see ro.bighealth.cxf.service.UserServicePortType#findAll()
 	 */
 	@Override
-	public Object findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> findAll() {
+
+		List<ro.bighealth.commons.entity.User> plainUsersFiltered = userService.findAll();
+
+		List<User> newUsersList = new ArrayList<User>();
+
+		for (ro.bighealth.commons.entity.User plainUser : plainUsersFiltered) {
+
+			ObjectFactory objectFactory = new ObjectFactory();
+
+			User newUser = objectFactory.createUser();
+
+			newUser.setId(plainUser.getId());
+			newUser.setUsername(plainUser.getUsername());
+			newUser.setEmail(plainUser.getEmail());
+			newUser.setPassword(plainUser.getPassword());
+			newUser.setFirstName(plainUser.getFirstName());
+			newUser.setLastName(plainUser.getLastName());
+
+			newUsersList.add(newUser);
+		}
+
+		return newUsersList;
 	}
 
 	/*
@@ -105,8 +151,21 @@ public class UserCxfServiceImpl implements UserServicePortType {
 	 */
 	@Override
 	public User findById(Long entityId) {
-		// TODO Auto-generated method stub
-		return null;
+		ro.bighealth.commons.entity.User plainUser = userService.findById(entityId);
+		
+		ObjectFactory objectFactory = new ObjectFactory();
+
+		User newUser = objectFactory.createUser();
+
+		newUser.setId(plainUser.getId());
+		newUser.setUsername(plainUser.getUsername());
+		newUser.setEmail(plainUser.getEmail());
+		newUser.setPassword(plainUser.getPassword());
+		newUser.setFirstName(plainUser.getFirstName());
+		newUser.setLastName(plainUser.getLastName());
+		
+		
+		return newUser;
 	}
 
 }
