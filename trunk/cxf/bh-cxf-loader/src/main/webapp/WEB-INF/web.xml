@@ -3,22 +3,27 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/ http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 
-	<display-name>BigHealth - Axis2 - Loader</display-name>
+	<display-name>BigHealth - CXF - Loader</display-name>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring/spring-cxf.xml</param-value>
 	</context-param>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
 	<servlet>
 		<display-name>cxfServlet</display-name>
 		<servlet-name>cxfServlet</servlet-name>
 		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>cxfServlet</servlet-name>
 		<url-pattern>/services/*</url-pattern>
 	</servlet-mapping>
+	
 </web-app>
