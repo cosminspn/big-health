@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ro.bighealth.cxf.service.impl;
+package ro.bighealth.soap.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
