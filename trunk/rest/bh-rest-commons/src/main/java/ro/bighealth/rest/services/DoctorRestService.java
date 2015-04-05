@@ -114,9 +114,7 @@ public class DoctorRestService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Doctor updateDoctor(Doctor doctor) {
-		Doctor updated = doctorService.update(doctor);
-
-		return updated;
+		return doctorService.update(doctor);
 	}
 
 	/**
